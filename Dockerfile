@@ -4,17 +4,15 @@ FROM openjdk:11-jre-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the build.gradle.kts and settings.gradle.kts files
-COPY build.gradle.kts settings.gradle.kts ./
-
-# Copy the gradle folder
+# Copy the Gradle build files
+COPY build.gradle settings.gradle gradlew ./
 COPY gradle/ ./gradle/
 
-# Copy the source code and resources
+# Copy the source code
 COPY src/ ./src/
 
-# Build the application with Gradle
-RUN gradlew clean build -x test
+# Build the application using Gradle
+RUN ./gradlew clean build -x test
 
 # Expose the port your Spring Boot application will run on (default is 8080)
 EXPOSE 8080
