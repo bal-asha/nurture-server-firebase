@@ -1,0 +1,5 @@
+##spring.cloud.gcp.firestore.credentials.location: classpath:/balasha-nurture-service-account.json
+
+##spring.cloud.gcp.firestore.credentials.location: classpath:balasha-nurture-service-account.json
+
+##spring.cloud.gcp.credentials.location=file:/path/to/your/keyfile.json
