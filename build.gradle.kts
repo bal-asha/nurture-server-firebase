@@ -5,7 +5,11 @@ plugins {
 }
 
 group = "org.org.bal.asha.app.server"
-version = "1.0-SNAPSHOT"
+version = "1.0"
+
+tasks.getByName<Jar>("jar") {
+    enabled = false
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
