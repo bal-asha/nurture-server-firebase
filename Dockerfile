@@ -14,7 +14,7 @@ COPY gradle/ ./gradle/
 COPY src/ ./src/
 
 # Build the application with Gradle
-RUN ./gradlew clean build -x test
+RUN gradlew clean build -x test
 
 # Expose the port your Spring Boot application will run on (default is 8080)
 EXPOSE 8080
